@@ -42,3 +42,7 @@ body {
   background-image: url("https://via.placeholder.com/960?text=illustration");
   background-position: center;
 }
+
+.ow-icon {
+  max-width: 80px;
+}

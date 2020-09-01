@@ -2,7 +2,8 @@ import React from 'react';
 import ForecastLocation from './ForecastLocation';
 import DayCard from './DayCard';
 import DegreeToggle from './DegreeToggle';
-import Icon from './Icon';
+// import Icon from './Icon';
+import CurrentWeather from './CurrentWeather';
 
 
 class Forecast extends React.Component {
@@ -13,7 +14,7 @@ class Forecast extends React.Component {
     }
 
     componentDidMount = () => {
-        const forecastTodayUrl = "https://community-open-weather-map.p.rapidapi.com/weather?units=imperial&q=dallas"
+        const forecastTodayUrl = "https://community-open-weather-map.p.rapidapi.com/weather?&q=dallas"
         const forecastWeekURL = "https://community-open-weather-map.p.rapidapi.com/forecast?q=dallas&cnt=40"
 
         fetch(forecastTodayUrl, {
@@ -59,11 +60,6 @@ class Forecast extends React.Component {
         return this.state.degreeType
     }
 
-    currentConditionIcon = () => {
-        const icon = `owf owf-${this.state.currentConditionIcon} owf-3x`
-        return icon;
-    }
-
     currentOwIcon = () => {
         const icon = `http://openweathermap.org/img/wn/${this.state.currentConditionOwIcon}@2x.png`
         return icon
@@ -79,16 +75,16 @@ class Forecast extends React.Component {
             <div className="container pt-5">
                 <ForecastLocation />
                 <div className="row current-weather text-white outline">
-                    <div className="col">
-                        <div className="row">
-                            <div className="h1 mb-0">{this.state.currentTemp}</div>
-                            {/* <i className={this.currentConditionIcon()}></i> */}
-                            <img src={this.currentOwIcon()} alt="icon" />
-                            {/* <img src=`http://openweathermap.org/img/wn/${}@2x.png` alt="icon"/> */}
-                            <div className="text-left text-capitalize">{this.state.currentDesc}<br />{this.state.currentWind}</div>
-                        </div>
+                    <div className="col d-flex align-items-center">
+                        <CurrentWeather
+                            degreeType={this.state.degreeType}
+                            currentTemp={this.state.currentTemp}
+                            icon={this.state.currentConditionOwIcon}
+                            desc={this.state.currentDesc}
+                            wind={this.state.currentWind}
+                        />
                     </div>
-                    <div className="col text-right">
+                    <div className="col d-flex justify-content-end">
                         <DegreeToggle degreeType={this.state.degreeType} updateForecastDegree={this.updateForecastDegree} />
                     </div>
                 </div>
