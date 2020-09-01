@@ -17,7 +17,7 @@ const DayCard = ({ reading, degreeType }) => {
                 <div className="card-body">
                     <p className="font-weight-bold mb-0">{moment(newDate).format('dddd')}</p>
                     <img src={iconUrl} alt="icon" />
-                    <p className="h3">{degreeType === "celsius" ? celsius + "°C" : fahrenheit + "°F"}</p>
+                    <p className="h5">{degreeType === "celsius" ? celsius + "°" : fahrenheit + "°"}</p>
                 </div>
             </div>
         </div>

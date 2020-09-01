@@ -71,7 +71,6 @@ class Forecast extends React.Component {
 
     switchValue = event => {
         console.log("changed");
-        // this.state.degreeType === "fahrenheit"
         if (this.state.degreeType === "fahrenheit") {
             this.setState({
                 degreeType: "celsius"
@@ -89,7 +88,7 @@ class Forecast extends React.Component {
         return (
             <div className="container pt-5">
                 <ForecastLocation />
-                <div className="row current-weather text-white">
+                <div className="row current-weather">
                     <div className="col d-flex align-items-center">
                         <CurrentWeather
                             degreeType={this.state.degreeType}

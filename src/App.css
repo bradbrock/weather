@@ -38,11 +38,20 @@ body {
 }
 
 .current-weather {
-  padding-bottom: 15rem;
-  background-image: url("https://via.placeholder.com/960?text=illustration");
-  background-position: center;
+  color: #65AED5;
+  padding-bottom: 30rem;
+  /* background-image: url("https://via.placeholder.com/960?text=illustration");
+  background-position: center; */
+  background-image: url("skyline.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
 }
 
 .ow-icon {
   max-width: 80px;
+}
+
+.card-body {
+  color: #4A4A4A;
 }

@@ -8,7 +8,7 @@ const CurrentWeather = ({degreeType, currentTemp, icon, desc, wind }) => {
 
     return (
         <React.Fragment>
-            <div className="h1 mb-0">{degreeType === "celsius" ? celsius + "°C" : fahrenheit + "°F"}</div>
+            <div className="h1 mb-0">{degreeType === "celsius" ? celsius + "°" : fahrenheit + "°"}</div>
             <img src={iconUrl} alt="icon" className="ow-icon" />
             <div className="text-left">
                 <p className="mb-0">{desc}</p>
