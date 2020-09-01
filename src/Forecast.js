@@ -2,6 +2,7 @@ import React from 'react';
 import ForecastLocation from './ForecastLocation';
 import DayCard from './DayCard';
 import DegreeToggle from './DegreeToggle';
+import DegreeSwitch from './DegreeSwitch';
 // import Icon from './Icon';
 import CurrentWeather from './CurrentWeather';
 
@@ -26,7 +27,6 @@ class Forecast extends React.Component {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             this.setState({
                 currentConditionIcon: data.weather[0].id,
                 currentConditionOwIcon: data.weather[0].icon,
@@ -69,6 +69,21 @@ class Forecast extends React.Component {
         return this.state.dailyData.map((reading, index) => <DayCard reading={reading} key={index} degreeType={this.state.degreeType} />)
     }
 
+    switchValue = event => {
+        console.log("changed");
+        // this.state.degreeType === "fahrenheit"
+        if (this.state.degreeType === "fahrenheit") {
+            this.setState({
+                degreeType: "celsius"
+            })
+        } else {
+            this.setState({
+                degreeType: "fahrenheit"
+            })
+        }
+        return this.state.degreeType
+    }
+
     render() {
 
         return (
@@ -85,7 +100,8 @@ class Forecast extends React.Component {
                         />
                     </div>
                     <div className="col d-flex justify-content-end">
-                        <DegreeToggle degreeType={this.state.degreeType} updateForecastDegree={this.updateForecastDegree} />
+                        {/* <DegreeToggle degreeType={this.state.degreeType} updateForecastDegree={this.updateForecastDegree} /> */}
+                        <DegreeSwitch  degreeType={this.state.degreeType} switchValue={this.switchValue} />
                     </div>
                 </div>
                 <div className="row justify-content-center">
