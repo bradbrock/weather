@@ -28,3 +28,12 @@
   color: #61dafb;
 }
 
+.outline {
+  outline: 1px gray dashed;
+}
+
+.current-weather {
+  padding-bottom: 15rem;
+  background-image: url("https://via.placeholder.com/960?text=illustration");
+  background-position: center;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import ForecastHeader from './ForecastHeader';
 import DayCard from './DayCard';
 import DegreeToggle from './DegreeToggle';
 
@@ -25,6 +26,7 @@ class Forecast extends React.Component {
         .then(data => {
             console.log(data)
             this.setState({
+                currentConditionIcon: data.weather[0].id,
                 currentTemp: data.main.temp,
                 currentDesc: data.weather[0].description,
                 currentWind: data.wind.speed
@@ -55,6 +57,11 @@ class Forecast extends React.Component {
         return this.state.degreeType
     }
 
+    currentConditionIcon = () => {
+        const icon = `owf owf-${this.state.currentConditionIcon} owf-3x`
+        return icon;
+    }
+
     formatDayCards = () => {
         return this.state.dailyData.map((reading, index) => <DayCard reading={reading} key={index} degreeType={this.state.degreeType} />)
     }
@@ -63,12 +70,20 @@ class Forecast extends React.Component {
 
         return (
             <div className="container pt-5">
-                <h5 className="display-5 text-muted">Dallas, TX</h5>
-                <div className="current-weather">
-                    {this.state.currentTemp} {this.state.currentDesc} {this.state.currentWind}
+                <ForecastHeader />
+                <div className="row current-weather outline">
+                    <div className="col">
+                        <div className="row">
+                            <div className="h1 mb-0">{this.state.currentTemp}</div>
+                            <i className={this.currentConditionIcon()}></i>
+                            <div className="text-left text-capitalize">{this.state.currentDesc}<br />{this.state.currentWind}</div>
+                        </div>
+                    </div>
+                    <div className="col text-right">
+                        <DegreeToggle degreeType={this.state.degreeType} updateForecastDegree={this.updateForecastDegree} />
+                    </div>
                 </div>
-                <DegreeToggle degreeType={this.state.degreeType} updateForecastDegree={this.updateForecastDegree} />
-                <div className="row justify-content-center">
+                <div className="row justify-content-center outline">
                     {this.formatDayCards()}
                 </div>
             </div>
