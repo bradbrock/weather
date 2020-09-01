@@ -28,6 +28,11 @@
   color: #61dafb;
 }
 
+body {
+  min-height: 100vh;
+  background: linear-gradient(45deg, rgba(39,102,147,1) 0%, rgba(46,175,255,1) 45%, rgba(130,234,255,1) 100%);
+}
+
 .outline {
   outline: 1px gray dashed;
 }
