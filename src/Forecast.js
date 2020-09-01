@@ -1,5 +1,5 @@
 import React from 'react';
-import ForecastHeader from './ForecastHeader';
+import ForecastLocation from './ForecastLocation';
 import DayCard from './DayCard';
 import DegreeToggle from './DegreeToggle';
 
@@ -70,7 +70,7 @@ class Forecast extends React.Component {
 
         return (
             <div className="container pt-5">
-                <ForecastHeader />
+                <ForecastLocation />
                 <div className="row current-weather outline">
                     <div className="col">
                         <div className="row">
