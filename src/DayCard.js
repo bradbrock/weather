@@ -9,20 +9,15 @@ const DayCard = ({ reading, degreeType }) => {
     const kelvin = reading.main.temp
     const fahrenheit = Math.round((kelvin - 273.15) * 9/5 + 32)
     const celsius = Math.round(kelvin - 273.15)
-
-    const imgURL = `owf owf-${reading.weather[0].id} owf-5x`
+    const iconUrl = `http://openweathermap.org/img/wn/${reading.weather[0].icon}@2x.png`
 
     return (
         <div className="col-sm-2">
             <div className="card">
-                <h3 className="card-title">{moment(newDate).format('dddd')}</h3>
-                <p className="text-muted">{moment(newDate).format('MMMM Do, h:mm a')}</p>
-                <i className={imgURL}></i>
-                <h2>{degreeType === "celsius" ? celsius + "°C" : fahrenheit + "°F"}</h2>
-                {/* <h2>F: {fahrenheit}</h2>
-                <h2>C: {celsius}</h2> */}
                 <div className="card-body">
-                    <div className="card-text">{reading.weather[0].description}</div>
+                    <p className="font-weight-bold mb-0">{moment(newDate).format('dddd')}</p>
+                    <img src={iconUrl} alt="icon" />
+                    <p className="h3">{degreeType === "celsius" ? celsius + "°C" : fahrenheit + "°F"}</p>
                 </div>
             </div>
         </div>

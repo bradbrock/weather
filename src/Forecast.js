@@ -83,7 +83,6 @@ class Forecast extends React.Component {
                         <div className="row">
                             <div className="h1 mb-0">{this.state.currentTemp}</div>
                             {/* <i className={this.currentConditionIcon()}></i> */}
-                            {/* <Icon code={this.state.currentConditionOwIcon} /> */}
                             <img src={this.currentOwIcon()} alt="icon" />
                             {/* <img src=`http://openweathermap.org/img/wn/${}@2x.png` alt="icon"/> */}
                             <div className="text-left text-capitalize">{this.state.currentDesc}<br />{this.state.currentWind}</div>
