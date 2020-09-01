@@ -74,7 +74,7 @@ class Forecast extends React.Component {
         return (
             <div className="container pt-5">
                 <ForecastLocation />
-                <div className="row current-weather text-white outline">
+                <div className="row current-weather text-white">
                     <div className="col d-flex align-items-center">
                         <CurrentWeather
                             degreeType={this.state.degreeType}
@@ -88,7 +88,7 @@ class Forecast extends React.Component {
                         <DegreeToggle degreeType={this.state.degreeType} updateForecastDegree={this.updateForecastDegree} />
                     </div>
                 </div>
-                <div className="row justify-content-center outline">
+                <div className="row justify-content-center">
                     {this.formatDayCards()}
                 </div>
             </div>

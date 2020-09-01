@@ -12,7 +12,7 @@ const CurrentWeather = ({degreeType, currentTemp, icon, desc, wind }) => {
             <img src={iconUrl} alt="icon" className="ow-icon" />
             <div className="text-left">
                 <p className="mb-0">{desc}</p>
-                <p className="mb-0">{wind}</p>
+                <p className="mb-0">{Math.round(wind)} mph</p>
             </div>
         </React.Fragment>
     )

@@ -12,8 +12,8 @@ const DayCard = ({ reading, degreeType }) => {
     const iconUrl = `http://openweathermap.org/img/wn/${reading.weather[0].icon}@2x.png`
 
     return (
-        <div className="col-sm-2">
-            <div className="card">
+        <div className="col pl-0 pr-0">
+            <div className="card rounded-0">
                 <div className="card-body">
                     <p className="font-weight-bold mb-0">{moment(newDate).format('dddd')}</p>
                     <img src={iconUrl} alt="icon" />
