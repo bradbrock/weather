@@ -55,3 +55,12 @@ body {
 .card-body {
   color: #4A4A4A;
 }
+
+.custom-switch .custom-control-label::before {
+  border-color: #007bff;
+  background-color: #007bff;
+}
+
+.custom-switch .custom-control-label::after {
+  background-color: #fff;
+}

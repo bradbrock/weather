@@ -11,7 +11,7 @@ const DegreeSwitch = ({degreeType, switchValue}) => {
                     id="customSwitch1"
                     onChange={switchValue}
                 />
-                <label className="custom-control-label" htmlFor="customSwitch1"></label>
+                <label className="custom-control-label" htmlFor="customSwitch1"> </label>
             </div>
             <div>°F</div>
         </div>
