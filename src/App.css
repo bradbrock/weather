@@ -2,32 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 body {
   min-height: 100vh;
   background: linear-gradient(46deg, #115DA3 0%, #4ECFED 100%);
@@ -35,6 +9,9 @@ body {
 
 .outline {
   outline: 1px gray dashed;
+}
+.container {
+  padding-top: 1rem;
 }
 
 .current-weather {
@@ -75,7 +52,11 @@ body {
 .weekly-forecast .card {
   border-radius: 0;
 }
-
+@media (min-width: 992px) and (min-height: 820px) {
+  .container {
+    padding-top: 10%;
+  }
+}
 @media (min-width: 768px) {
   /* .container {
     width: 100% !important;
@@ -99,7 +80,7 @@ body {
     max-width: 100% !important;
     min-height: 100vh;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
   }
   .current-weather {
     padding-bottom: 0;
@@ -118,10 +99,13 @@ body {
   .container {
     height: 100vh;
   }
+  .current-weather {
+    min-height: 20vh;
+  }
   .weekly-forecast {
     flex-flow: column nowrap;
     overflow-y: scroll;
-    flex: 1;
+    flex: 0 1 auto;
   }
   .weekly-forecast .card-body {
     display: flex;

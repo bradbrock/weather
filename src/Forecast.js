@@ -86,7 +86,7 @@ class Forecast extends React.Component {
     render() {
 
         return (
-            <div className="container pt-5">
+            <div className="container">
                 <ForecastLocation />
                 <div className="row current-weather">
                     <div className="col d-flex align-items-center">
