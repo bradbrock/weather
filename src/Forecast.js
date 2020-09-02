@@ -89,7 +89,7 @@ class Forecast extends React.Component {
             <div className="container">
                 <ForecastLocation />
                 <div className="row current-weather">
-                    <div className="col d-flex align-items-center">
+                    <div className="current-weather__readings col d-flex flex-wrap align-items-center">
                         <CurrentWeather
                             degreeType={this.state.degreeType}
                             currentTemp={this.state.currentTemp}
@@ -98,7 +98,7 @@ class Forecast extends React.Component {
                             wind={this.state.currentWind}
                         />
                     </div>
-                    <div className="col d-flex justify-content-end">
+                    <div className="current-weather__switch col d-flex justify-content-end">
                         {/* <DegreeToggle degreeType={this.state.degreeType} updateForecastDegree={this.updateForecastDegree} /> */}
                         <DegreeSwitch  degreeType={this.state.degreeType} switchValue={this.switchValue} />
                     </div>
