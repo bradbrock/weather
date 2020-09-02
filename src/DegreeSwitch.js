@@ -3,7 +3,7 @@ import React from 'react'
 const DegreeSwitch = ({degreeType, switchValue}) => {
     return (
         <div className="degree-switch d-flex pt-2">
-            <div className="pr-2">°C</div>
+            <div className="pr-2">°F</div>
             <div className="custom-control custom-switch">
                 <input
                     type="checkbox"
@@ -13,7 +13,7 @@ const DegreeSwitch = ({degreeType, switchValue}) => {
                 />
                 <label className="custom-control-label" htmlFor="customSwitch1"> </label>
             </div>
-            <div>°F</div>
+            <div>°C</div>
         </div>
     )
 }
