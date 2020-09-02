@@ -103,7 +103,7 @@ class Forecast extends React.Component {
                         <DegreeSwitch  degreeType={this.state.degreeType} switchValue={this.switchValue} />
                     </div>
                 </div>
-                <div className="row justify-content-center d-flex flex-md-row flex-column weekly-forecast">
+                <div className="weekly-forecast row">
                     {this.formatDayCards()}
                 </div>
             </div>
