@@ -37,7 +37,9 @@ body {
 .ow-icon {
   max-width: 80px;
 }
-
+.card {
+  background: rgba(255,255,255,.75);
+}
 .card-body {
   color: #4A4A4A;
 }
@@ -62,14 +64,14 @@ body {
   left: 0;
   transform: translate(-50%, 150%);
   animation-name: breeze1;
-  animation-duration: 60s;
+  animation-duration: 120s;
   animation-iteration-count: infinite;
 }
 .cloud-img--2 {
   right: 0;
   transform: translate(50%, 100%);
   animation-name: breeze2;
-  animation-duration: 80s;
+  animation-duration: 160s;
   animation-iteration-count: infinite;
 }
 @keyframes breeze1 {
