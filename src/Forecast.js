@@ -1,10 +1,9 @@
 import React from 'react';
 import ForecastLocation from './ForecastLocation';
 import DayCard from './DayCard';
-import DegreeToggle from './DegreeToggle';
 import DegreeSwitch from './DegreeSwitch';
-// import Icon from './Icon';
 import CurrentWeather from './CurrentWeather';
+import cloud from './cloud.svg';
 
 
 class Forecast extends React.Component {
@@ -102,6 +101,8 @@ class Forecast extends React.Component {
                         {/* <DegreeToggle degreeType={this.state.degreeType} updateForecastDegree={this.updateForecastDegree} /> */}
                         <DegreeSwitch  degreeType={this.state.degreeType} switchValue={this.switchValue} />
                     </div>
+                    <img src={cloud} alt="cloud" className="cloud-img cloud-img--1" />
+                    <img src={cloud} alt="cloud" className="cloud-img cloud-img--2" />
                 </div>
                 <div className="weekly-forecast row">
                     {this.formatDayCards()}

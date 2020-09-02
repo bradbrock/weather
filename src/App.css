@@ -7,9 +7,6 @@ body {
   background: linear-gradient(46deg, #115DA3 0%, #4ECFED 100%);
 }
 
-.outline {
-  outline: 1px gray dashed;
-}
 .container {
   padding-top: 1rem;
 }
@@ -57,6 +54,55 @@ body {
 .weekly-forecast .card {
   border-radius: 0;
 }
+.cloud-img {
+  position: absolute;
+  /* opacity: 0; */
+}
+.cloud-img--1 {
+  left: 0;
+  transform: translate(-50%, 150%);
+  animation-name: breeze1;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+.cloud-img--2 {
+  right: 0;
+  transform: translate(50%, 100%);
+  animation-name: breeze2;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+}
+@keyframes breeze1 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 150%);
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  50% {
+    transform: translate(700%, 175%);
+  }
+}
+@keyframes breeze2 {
+  0% {
+    opacity: 0;
+    transform: translate(50%, 100%);
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-700%, 130%);
+  }
+}
+
 @media (min-width: 768px) and (min-height: 960px) {
   .container {
     padding-top: 10%;
@@ -95,6 +141,9 @@ body {
   .card-body__icon {
     max-width: 60px;
   }
+  .cloud-img {
+    max-width: 80px;
+  }
 }
 
 @media (max-width: 475px) {
@@ -116,7 +165,7 @@ body {
     color: #fff;
   }
   .current-weather__readings {
-    background: linear-gradient(0deg, rgba(39,102,147,0) 0%, rgba(130,234,255,1) 100%);
+    /* background: linear-gradient(0deg, rgba(39,102,147,0) 0%, rgba(130,234,255,1) 100%); */
     flex-flow: row wrap;
     justify-content: space-between;
     padding: 1rem;
