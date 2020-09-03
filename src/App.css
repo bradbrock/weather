@@ -17,7 +17,7 @@ body {
   background-image: url("skyline.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: bottom center;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.20);
   position: relative;
   z-index: 10;
