@@ -127,11 +127,6 @@ body {
     flex-flow: column nowrap;
     height: 100vh;
   }
-  .current-weather {
-    padding-bottom: 0;
-    min-height: 40vh;
-    align-items: flex-start;
-  }
   .card-body__icon {
     max-width: 60px;
   }
@@ -151,6 +146,8 @@ body {
   .current-weather {
     position: static;
     min-height: 25vh;
+    padding-bottom: 10rem;
+    align-items: flex-start;
   }
   .current-weather__switch {
     position: absolute;
@@ -160,10 +157,10 @@ body {
   }
   .current-weather__readings {
     background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(130,234,255,1) 100%);
-
     flex-flow: row wrap;
     justify-content: space-between;
     padding: 1rem;
+    min-height: 72px; /* Dirty fix for Safari Nan bug  */ 
   }
   .current-weather__icon {
     display: none;
@@ -176,20 +173,17 @@ body {
     overflow-y: scroll;
     flex: 0 1 auto;
   }
+  .weekly-forecast .card {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .weekly-forecast .card-body {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
-  .weekly-forecast .card-body__day {
-    flex: 1 100%;
-  }
-  .weekly-forecast .card-body__icon {
-    flex: 1 1 0;
-    order: 3;
-  }
-  .weekly-forecast .card-body__temp {
-    flex: 0 1 1;
+  .card-body__temp.h2 {
+    font-size: 1.5rem;
   }
 }

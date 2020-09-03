@@ -69,7 +69,6 @@ class Forecast extends React.Component {
     }
 
     switchValue = event => {
-        console.log("changed");
         if (this.state.degreeType === "fahrenheit") {
             this.setState({
                 degreeType: "celsius"
